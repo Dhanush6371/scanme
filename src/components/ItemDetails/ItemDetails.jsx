@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import SwipeableViews from "react-swipeable-views";
+import { useSwipeable } from "react-swipeable";
 import { generalpics, loadMenuData } from "../../assets/Suraj Menu/pictures";
 import { useAddedItems } from "../context/AddedItemsContext";
 import { ToastContainer, toast } from "react-toastify";
@@ -98,6 +98,13 @@ const ItemDetails = () => {
     setItemIndex(index);
   };
 
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => handleNextItem(),
+    onSwipedRight: () => handlePreviousItem(),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true
+  });
+
   const handleNextItem = () => {
     setItemIndex((prevIndex) => (prevIndex + 1) % menuItems.length);
   };
@@ -162,39 +169,32 @@ const ItemDetails = () => {
     <div className="temp-div">
       {!loading && menuItems[itemIndex] && (
         <div className={`menu-details ${loaded ? "loaded" : ""}`}>
-          <SwipeableViews
-            index={itemIndex}
-            onChangeIndex={handleSwipeChange}
-            containerStyle={{ height: "100%", width: "100%" }}
-            axis="x"
-            resistance
-            enableMouseEvents
-          >
-            {menuItems.map((item) => (
-              <div className="menu-details-content" key={item.id}>
+          <div {...swipeHandlers} style={{ height: "100%", width: "100%" }}>
+            <div className="menu-details-content">
+              {menuItems[itemIndex] && (
                 <div className="menu-details-inner">
-                  <h2 className="menu-details-name">{item.name}</h2>
+                  <h2 className="menu-details-name">{menuItems[itemIndex].name}</h2>
                   <div className="menu-details-content-info">
-                    <p className="menu-details-price">{item.price}</p>
+                    <p className="menu-details-price">{menuItems[itemIndex].price}</p>
                   </div>
 
                   <div className="menu-details-image-container">
-                    {item.video ? (
+                    {menuItems[itemIndex].video ? (
                       <img
-                        src={item.video}
-                        alt={item.name}
+                        src={menuItems[itemIndex].video}
+                        alt={menuItems[itemIndex].name}
                         className="menu-details-thumbnail"
                       />
                     ) : (
                       <img
-                        src={item.image}
-                        alt={item.name}
+                        src={menuItems[itemIndex].image}
+                        alt={menuItems[itemIndex].name}
                         className="menu-details-thumbnail"
                       />
                     )}
                   </div>
 
-                  <p className="menu-details-desc">{item.desc}</p>
+                  <p className="menu-details-desc">{menuItems[itemIndex].desc}</p>
 
                   <div className="quantity-buttons">
                     <p
@@ -233,9 +233,9 @@ const ItemDetails = () => {
                   </div>
                   
                 </div>
-              </div>
-            ))}
-          </SwipeableViews>
+              )}
+            </div>
+          </div>
 
           {itemIndex > 0 && (
             <div
