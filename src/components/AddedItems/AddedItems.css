@@ -1,0 +1,565 @@
+.added-items-main {
+  width: 99vw;
+  min-height: 100vh;
+  height: auto;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+  font-size: medium;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  min-width: 99vw;
+  width: 99vw;
+  justify-content: center;
+}
+
+.menu-icon {
+  margin-right: 10px;
+  cursor: pointer;
+  width: 30px;
+}
+
+.items-details-navbar-name {
+  width: 75vw;
+  text-align: center;
+}
+
+.home-icon {
+  width: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.added-items {
+  padding: 0 20px;
+}
+
+.added-items ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.added-items h2 {
+  margin-bottom: 20px;
+}
+
+.added-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 15px;
+
+  border-radius: 10px;
+  /* background-color: rgb(200, 221, 233); */
+  background-color: #e2e2e2;
+  padding: 10px;
+}
+
+.added-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.added-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  gap: 0.5rem;
+  margin-left: 0.4rem;
+  width: 100%;
+}
+
+.added-item-info h3,
+p {
+  margin: 0;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin: 5px 0px;
+}
+
+.quantity-controls button {
+  padding: 5px;
+}
+
+.quantity-controls span {
+  margin: 0 10px;
+}
+
+.added-item-edit {
+  width: 100px;
+  background: transparent;
+  border: none;
+}
+
+.added-item-edit img {
+  width: 60%;
+}
+
+.added-item-edit+button>img {
+  width: 80%;
+}
+
+.delete-button {
+  border: none;
+  width: 100px;
+  background-color: transparent;
+}
+
+.total-cost {
+  text-align: end;
+}
+
+/* .go-back {
+  padding: 0.5rem 0.8rem;
+  border-radius: 20px;
+  border: none;
+  margin: 0.5rem;
+}
+
+.send-order {
+  padding: 0.5rem 0.8rem;
+  border-radius: 20px;
+  border: none;
+  margin: 0.5rem;
+} */
+
+.go-back {
+  padding: 0.8rem 0.7rem;
+  border-radius: 20px;
+  border: none;
+  margin: 0.5rem;
+  background-color: #f44336;
+  /* Red background */
+  color: white;
+  /* White text color */
+  font-size: 16px;
+  /* Increase font size */
+  cursor: pointer;
+  /* Change cursor to pointer on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Add shadow */
+  transition: background-color 0.3s, transform 0.2s;
+  /* Smooth transitions */
+}
+
+.go-back:hover {
+  background-color: #d32f2f;
+  /* Darker red on hover */
+  transform: translateY(-2px);
+  /* Lift effect on hover */
+}
+
+.send-order {
+  padding: 0.8rem 3rem;
+  border-radius: 20px;
+  border: none;
+  margin: 0.5rem;
+  background-color: #4caf50;
+  /* Green background */
+  color: white;
+  /* White text color */
+  font-size: 16px;
+  /* Increase font size */
+  cursor: pointer;
+  /* Change cursor to pointer on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Add shadow */
+  transition: background-color 0.3s, transform 0.2s;
+  /* Smooth transitions */
+}
+
+.send-order:hover {
+  background-color: #388e3c;
+  /* Darker green on hover */
+  transform: translateY(-2px);
+  /* Lift effect on hover */
+}
+
+.send-order:disabled {
+  background-color: #b0b0b0;
+  /* Gray background for disabled button */
+  color: #6c6c6c;
+  /* Lighter gray text */
+  cursor: not-allowed;
+  /* Show not-allowed cursor */
+  box-shadow: none;
+  /* Remove shadow */
+  opacity: 0.7;
+  /* Slight transparency */
+}
+
+
+.your-orders {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.added-items ul,
+.your-orders ul {
+  list-style-type: none;
+  /* Removes the bullets */
+  padding: 0;
+  /* Optional: removes padding */
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background-color: #f1f0f0;
+}
+
+.order-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.order-item-info {
+  flex: 1;
+}
+
+.orders-total-cost {
+  text-align: end;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.scrolling-text-container {
+  width: 100%;
+  /* Full width of the container */
+  overflow: hidden;
+  /* Hides the text once it moves out of the view */
+  background-color: linear-gradient(#fff7f2, #efd6c7);
+  /* Optional: Adds a background to make it noticeable */
+  color: #f8d7da;
+  /* Text color */
+  padding: 10px 0;
+  /* Adds padding to make it more readable */
+  box-sizing: border-box;
+  position: relative;
+}
+
+.scrolling-text {
+  display: inline-block;
+  color: rgb(26, 25, 25);
+  white-space: nowrap;
+  /* Prevents the text from wrapping to the next line */
+  position: relative;
+  animation: scroll-left 15s linear infinite;
+  /* Continuous scrolling */
+  transform: translateX(100%);
+  /* Set the initial position to right of the container */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+    /* Start from the right (outside the container) */
+  }
+
+  100% {
+    transform: translateX(-100%);
+    /* Move to the left, disappearing after it's out */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Styling for the success message */
+.order-success-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: fadeOut 3s forwards;
+}
+
+/* Fade-out animation for success message */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 600px) {
+  .order-success-message {
+    width: 80%;
+    /* Adjust width for smaller screens */
+    font-size: 14px;
+    /* Smaller font size on mobile */
+    padding: 12px;
+    /* Reduce padding */
+    top: 10px;
+    /* Adjust top position for mobile */
+  }
+}
+
+@media (max-width: 400px) {
+  .order-success-message {
+    width: 90%;
+    /* Further reduce width on very small screens */
+    font-size: 12px;
+    /* Smaller font size for extra small screens */
+    padding: 10px;
+    /* Further reduce padding */
+    top: 8px;
+    /* Adjust top position for very small screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* OTP Verification Modal */
+.otp-verification-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  /* Dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.otp-verification-content {
+  background: linear-gradient(145deg, #f8f9fc, #ffffff);
+  /* Gradient background */
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 95%;
+  max-width: 500px;
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Title */
+.otp-verification-content h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Email Input */
+.otp-verification-content input.email {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.otp-verification-content input.email:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* OTP Input Fields */
+.otp-verification-content .otp-input-fields {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.otp-verification-content .otp-input-fields input {
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.otp-verification-content .otp-input-fields input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.25);
+}
+
+/* Buttons */
+.otp-verification-content .btn {
+  padding: 12px 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.otp-verification-content .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.otp-verification-content .btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.otp-verification-content .btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.otp-verification-content .btn-success:hover {
+  background-color: #1e7e34;
+  transform: scale(1.05);
+}
+
+.otp-verification-content .btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.otp-verification-content .btn-secondary:hover {
+  background-color: #545b62;
+  transform: scale(1.05);
+}
+
+/* Status Messages */
+.otp-verification-content .success {
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.otp-verification-content .error {
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Paragraph Styling */
+.otp-verification-content p {
+  margin-bottom: 15px;
+  /* Add space below the paragraph */
+  color: #495057;
+  /* Optional: Adjust text color for readability */
+  font-size: 1rem;
+  /* Optional: Adjust font size */
+}
+
+/* Close Button */
+.otp-verification-content .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  z-index: 1100;
+  /* Ensure it's above other content */
+}
+
+.otp-verification-content .close-button:hover {
+  color: #dc3545;
+  /* Red color on hover */
+  transform: scale(1.1);
+}
