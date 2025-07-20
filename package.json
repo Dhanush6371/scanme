@@ -18,7 +18,6 @@
     "react-router-dom": "^6.3.0",
     "react-slick": "^0.30.2",
     "react-swipeable": "^7.0.1",
-    "react-swipeable-views": "^0.14.0",
     "react-toastify": "^10.0.5",
     "require": "^0.4.4",
     "slick-carousel": "^1.8.1"
